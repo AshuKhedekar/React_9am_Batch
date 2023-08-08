@@ -1,0 +1,54 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+  function App() {
+    const num1= React.useRef();
+    const num2 = React.useRef();
+    const res = React.useRef();
+    const sum=()=>{
+        let n1 = parseInt(num1.current.value);
+        let n2 = Number(num2.current.value);
+        let sum = n1+n2;
+        res.current.innerText = sum;
+        if(sum > 100){
+            res.current.style.color="red" ;
+        }
+        else{
+            res.current.style.color="blue";
+        }
+        
+        
+        
+        // let number1 = num1.current
+        // let number2 = num2.current
+    }
+    return (
+      <div>
+        <p>
+          <b>N1: </b>
+          <input type="number" ref={num1}/>
+        </p>
+        <p>
+          <b>N2: </b>
+          <input type="number" ref={num2}/>
+        </p>
+        <p>
+          <button onClick={sum}>Submit</button>
+        </p>
+        <h3>
+          Result is : <span ref={res}>0</span>
+        </h3>
+      </div>
+    );
+  }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
