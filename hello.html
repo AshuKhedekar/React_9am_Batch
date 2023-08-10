@@ -10,41 +10,55 @@
 <div id="root"></div>
 <script type="text/babel">
   function App() {
-    const num1= React.useRef();
-    const num2 = React.useRef();
-    const res = React.useRef();
-    const sum=()=>{
-        let n1 = parseInt(num1.current.value);
-        let n2 = Number(num2.current.value);
-        let sum = n1+n2;
-        res.current.innerText = sum;
-        if(sum > 100){
-            res.current.style.color="red" ;
+    console.log("state render");
+    const [num1,setNum1]=React.useState(0);
+    const [num2,setNum2] = React.useState(0)
+    const [sum,setSum] = React.useState(0) 
+  
+    
+    
+    const add=()=>{
+        let result = num1 + num2;
+        console.log(result);
+        setSum(result);
+        console.log(sum);
+        
+    }
+      
+        
+        const f1=(event)=>{
+         let n1= Number(event.target.value);
+          console.log(n1);
+          setNum1(n1);
         }
-        else{
-            res.current.style.color="blue";
+
+        const f2=(e)=>{
+          let n2 = parseInt(e.target.value);
+          console.log(n2);
+          setNum2(n2);
+
         }
-        
-        
-        
+
+        // const f2=(e)=>{
+        // console.log(e);
+        // }
         // let number1 = num1.current
         // let number2 = num2.current
-    }
     return (
       <div>
         <p>
           <b>N1: </b>
-          <input type="number" ref={num1}/>
+          <input type="number" onChange={f1}/>
         </p>
         <p>
           <b>N2: </b>
-          <input type="number" ref={num2}/>
+          <input type="number" onChange={f2}/>
         </p>
         <p>
-          <button onClick={sum}>Submit</button>
+          <button onClick={add}>Submit</button>
         </p>
         <h3>
-          Result is : <span ref={res}>0</span>
+          Result is : <span >{sum}</span>
         </h3>
       </div>
     );

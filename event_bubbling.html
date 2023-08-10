@@ -1,0 +1,26 @@
+<style>
+    div{
+        border:2px solid red;
+        padding:32px;
+    }
+</style>
+<div onclick="f1()">
+    <div onchange="f2()">
+        <div onclick="f3()">
+
+        </div>
+    </div>
+</div>
+<script>
+    function f1(event){
+        // event.stopPropagation();
+        alert("F1 called");
+    }
+    function f2(event){
+        // event.stopPropagation();
+        alert("F2 called");
+    }
+    function f3(){
+        alert("F3 called")
+    }
+</script>
