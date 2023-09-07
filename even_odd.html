@@ -1,0 +1,44 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    function App(){
+      const [inputvalue,setInputValue]= React.useState('');
+      const [result,setResult] = React.useState(0);
+    const onchangeFn=(e)=>{
+     setInputValue(e.target.value);
+    }
+      
+    const onClickFn=()=>{
+        if(inputvalue % 2 == 0){
+             setResult("EVEN");
+        }
+        else{
+            setResult("ODD");
+        }
+    }
+    return (
+      <div>
+        <p>
+          <b>N1: </b>
+          <input type="text" onChange={onchangeFn}/>
+        </p>
+        <p>
+          <button onClick={onClickFn}>Submit</button>
+        </p>
+        <h3>
+          Result is : <span >{result}</span>
+        </h3>
+      </div>
+    );
+    }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

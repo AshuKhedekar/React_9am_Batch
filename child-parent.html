@@ -1,0 +1,43 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    const Child=(props)=>{
+        debugger
+        const inputRef = React.useRef();
+
+        const clickFn=()=>{
+            debugger
+            let name = inputRef.current.value;
+              props.fn(name);
+        }
+       return <div>
+        <input  ref={inputRef}/>
+        <button onClick={clickFn}>Submit</button>
+        </div> 
+    }
+    function App(){
+        debugger
+      const [data,setData] = React.useState("Not Received");
+    
+      const getName=(n)=>{
+        debugger
+        setData(n);
+      }
+    return (
+      <div>
+        <Child fn={getName}/>
+        <h2>{data}</h2>
+      </div>
+    );
+    }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

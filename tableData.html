@@ -1,0 +1,55 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<style>
+    .b-m{
+        margin-bottom: 50px;
+    }
+    .pl{
+        padding-left: 20px;
+    }
+</style>
+<script type="text/babel">
+   function App(){
+    const players = [
+        {
+            heading:'sachin',
+            data:["mumbai",20000]
+        },
+        {
+            heading:'Dhoni',
+            data:["Ranchi",15000]
+        },
+        {
+            heading:'kohli',
+            data:["mumbai",20000]
+        }
+    ]
+    return <div>
+        {
+            players.map((obj,index)=>{
+              return <div className="b-m" key={index}>
+                <h2>{obj.heading}</h2>
+              {
+              obj.data.map((v,id)=>{
+                 return <div key={id} className="pl">--->{v}</div>
+              })
+            }
+            </div>
+            })
+          
+        
+        }
+        </div>
+   } 
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+

@@ -1,0 +1,16 @@
+function App(){
+return <div>
+    <A value="sachin"/>
+</div>
+}
+function A(){
+    return <div>
+        {value}
+    </div>
+}
+
+
+context api 
+1. i need to create context ---> let context = React.createContext();
+
+2. we 

@@ -1,0 +1,56 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    const context = React.createContext();
+    const E=()=>{
+        let ctx = React.useContext(context)
+       return <div>
+        <h2> E component : {ctx}</h2>
+        </div>
+    }
+    const D=()=>{
+        let ctx = React.useContext(context);
+     return <div>
+        D component : {ctx}
+        <E/>
+        </div>
+    }
+    const C=()=>{
+    return 
+    <div> C component</div>
+    }
+    const B=()=>{
+        let ctx = React.useContext(context);
+        return <div>B component: {ctx}
+            <C/>
+            <D/>
+            </div>
+    }
+    const A=()=>{
+        return <div>
+            A component
+            <B/>
+            </div>
+    }
+function App(){
+    let name = "sachin"
+return (
+<div>
+    App Component
+    <context.Provider value={name}>
+    <A/>
+</context.Provider>
+    </div>
+)
+}
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

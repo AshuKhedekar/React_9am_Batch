@@ -1,0 +1,91 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+  const List = ({heading,data,keys}) => {
+    // const {heading,data,keys} = props;
+    return (
+      <div>
+        <table border="2px">
+          <thead>
+            <tr>
+              {
+                heading.map((h,index)=>{
+                   return <th key={index}>{h}</th>
+                })
+              }  
+            </tr>
+          </thead>
+          <tbody>
+            
+                {
+                    data.map((obj,id)=>{
+                      return <tr key={id}>
+                        {
+                          keys.map((v,id)=>{
+                            return <td>{obj[v]}</td>
+                          })
+                        }
+                        </tr> 
+                    })
+                }
+                
+            </tbody>
+        </table>
+      </div>
+    );
+  };
+  function App() {
+    const studentHeading = ["s_name", "marks"];
+    const studentKeys = ["name","marks"];
+    const studentData = [
+      {
+        name: "s1",
+        marks: 87,
+      },
+      {
+        name: "s2",
+        marks: 88,
+      },
+      {
+        name: "s3",
+        marks: 89,
+      },
+      {
+        name: "s4",
+        marks: 78,
+      },
+    ];
+    const PlayersHeadings = ["name", "runs", "Location"];
+    const PlayersKeys = ["name","runs","loc"];
+    const PlayersData = [
+      {
+        name: "sachin",
+        runs: 20000,
+        loc: "Mumbai",
+      },
+      {
+        name: "Dhoni",
+        runs: 15000,
+        loc: "Ranchi",
+      },
+    ];
+    return <div>
+        <h2>Student Data</h2>
+        <List data={studentData} heading={studentHeading} keys={studentKeys}/>
+
+        <h2>Players Data</h2>
+        <List data={PlayersData} heading={PlayersHeadings} keys={PlayersKeys}/>
+        </div>;
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

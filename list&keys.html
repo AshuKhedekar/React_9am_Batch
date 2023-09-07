@@ -1,0 +1,66 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+   function App(){
+       const heading = ['FName',"Location",'runs',"LName"];
+       const players = [
+        {
+            'fname':"Sachin",
+            "loc":"Mumbai",
+            'runs':10000,
+            'lname':"Tendulkar"
+        },
+        {
+            'fname':"dhoni",
+            "loc":"Ranchi",
+            'runs':20000,
+            'lname':"abc"
+        },
+        {
+            'fname':"virat",
+            "loc":"Delhi",
+            'runs':15000,
+            'lname':"kohli"
+        },
+        {
+            'fname':"Dravid",
+            "loc":"mumbai",
+            'runs':12000,
+            'lname':"abc"
+        }
+       ];
+    return <div>
+        
+        
+        {
+                    players.map((ele,id)=>{
+                        const {lname,loc,runs,fname} =ele;
+                        return <select key={id}>
+                        <option>{lname}</option>
+                        <option>{loc}</option>
+                        <option>{runs}</option>
+                        <option>{fname}</option>
+                        </select>
+                        // return <tr key={id}>
+                        //     <td>{ele.fname}</td> 
+                        //     <td>{ele.loc}</td>
+                        //     <td> {ele.runs} </td>
+                        //     <td>{ele.lname}</td>
+                        //         </tr>
+                    })
+                }
+                
+           
+        </div>
+    }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

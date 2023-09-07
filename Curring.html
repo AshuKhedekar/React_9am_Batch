@@ -1,0 +1,63 @@
+1. curring with closure
+
+function sum(n1){
+    return function f2(n2){
+        return n1+n2;
+    }
+}
+    
+        
+undefined
+var res = sum(10);
+undefined
+res
+ƒ f2(n2){
+        return n1+n2;
+    }
+res()
+NaN
+res(12)
+22
+
+
+------------------>
+curring with bind method
+
+<!-- ------------------curring--------- -->
+
+const addCurring=(a)=>{
+    return (b)=>{
+        return  (c)=>{
+            return a+b+c;
+        }
+    }
+}
+        
+undefined
+addCurring((2)(5)(3));
+  2 is not a function
+    
+
+let res1 = addCurring(2);
+undefined
+let res2 = res1(5);
+undefined
+let total = res2(3);
+undefined
+total
+10
+res1
+(b)=>{
+        return  (c)=>{
+            return a+b+c;
+        }
+    }
+res3
+ Uncaught ReferenceError: res3 is not defined
+
+res2
+(c)=>{
+            return a+b+c;
+        }
+total()
+ Uncaught TypeError: total is not a function

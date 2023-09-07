@@ -9,34 +9,54 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <div id="root"></div>
 <script type="text/babel">
+  
   function App() {
+    
     console.log("state render");
     const [num1,setNum1]=React.useState(0);
     const [num2,setNum2] = React.useState(0)
     const [sum,setSum] = React.useState(0) 
   
     
-    
     const add=()=>{
+      
         let result = num1 + num2;
         console.log(result);
         setSum(result);
-        console.log(sum);
         
-    }
+      }
+      console.log(sum);
       
         
         const f1=(event)=>{
+          
+          console.log(event)
          let n1= Number(event.target.value);
-          console.log(n1);
+          // console.log(n1);
           setNum1(n1);
         }
 
         const f2=(e)=>{
+          
           let n2 = parseInt(e.target.value);
           console.log(n2);
           setNum2(n2);
 
+        }
+
+        const sub=()=>{
+          let result = num1 - num2;
+          setSum(result)
+        }
+
+        const mul=()=>{
+          let result = num1 * num2;
+          setSum(result);
+        }
+
+        const div=()=>{
+          let result = num1 / num2;
+          setSum(result);
         }
 
         // const f2=(e)=>{
@@ -55,7 +75,10 @@
           <input type="number" onChange={f2}/>
         </p>
         <p>
-          <button onClick={add}>Submit</button>
+          <button onClick={add}>add</button>
+          <button onClick={sub}>Sub</button>
+          <button onClick={mul}>Multiply</button>
+          <button onClick={div}>Division</button>
         </p>
         <h3>
           Result is : <span >{sum}</span>

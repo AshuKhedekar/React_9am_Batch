@@ -1,0 +1,43 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    function App(){
+      const [inputvalue,setInputValue]= React.useState('');
+      const [stringarray,setStringArray] = React.useState([])
+      
+      const inputValue=(event)=>{
+       setInputValue(event.target.value);
+      }
+
+      const clickFn=()=>{
+          setStringArray([...stringarray,inputvalue])
+          setInputValue('');
+          
+      }
+
+    return (
+      <div>
+        <p>
+          <b>N1: </b>
+          <input type="text" value={inputvalue} onChange ={inputValue}/>
+        </p>
+        <p>
+          <button onClick={clickFn}>Submit</button>
+        </p>
+        <h3>
+          Result is : <span >{stringarray.join(',')}</span>
+        </h3>
+      </div>
+    );
+    }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

@@ -1,0 +1,39 @@
+<div>
+    <h1>Search Functionality</h1>
+    <input type="search" id="searchbar"/>
+    <p id="para">API called 0 times</p>
+    <button id="btn">Reset</button>
+</div>
+<script>
+    let output = document.getElementById('para');
+console.log(output);
+let input = document.getElementById("searchbar");
+console.log(input);
+let button =document.getElementById("btn");
+console.log(button)
+let count =0;
+
+
+function debounce(fn,delay){
+    debugger;
+    let timer;
+    return function(){
+        clearTimeout(timer);
+        timer = setTimeout(()=>fn(),delay);
+    }
+}
+
+const handleChange = debounce(()=>{
+    debugger
+    output.innerText = `API called ${++count} times`;
+},1000);
+
+input.addEventListener("input" , handleChange);
+
+btn.addEventListener("click",()=>{
+    debugger
+    count=0,
+    input.value="",
+    output.innerText = `API called ${count} times `;
+})
+</script>

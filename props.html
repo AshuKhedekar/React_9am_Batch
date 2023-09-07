@@ -1,0 +1,33 @@
+<script
+  crossorigin
+  src="https://unpkg.com/react@18/umd/react.development.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+ const Child=({name , color , children})=>{
+    // const  {name , color, children} = props;
+  return <div>
+    My name is  {name} .I am from {color}. my fav color {children}.
+    </div>
+
+ }
+    function App(){
+    
+    return (
+      <div>
+       <Child name="sachin" color="red">MUMBAI</Child>
+       <Child name="Dhoni" color="green">DELHI</Child>
+       <Child name="kohli" color="blue">RANCHI</Child>
+       <Child name="ganguly" color="yellow">PUNE</Child>
+       <Child name="raj" color="black">BANGLORE</Child>
+      </div>
+    );
+    }
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

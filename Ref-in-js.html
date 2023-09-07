@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <!-- second example -->
+       <!-- <ul id="ul-list">
+        <li>Html</li>
+        <li>Css</li>
+       </ul> -->
+       <!-- <p id="new-list"></p> -->
+
+       <!-- -- -----======================================== -->
+       <!-- first example -->
+        <!-- <p id="p1" onclick="myfunction()">My first page</p> -->
+
+    <!-- 3 example-------------------------> 
+    <p id="p1">My First Heading</p>
+
+<!-- <button onclick="clickFn()">Click</button> -->
+<div id="div">
+<p> my first paragraph</p>
+<p> my second paragraph</p>
+<p> my third paragraph</p>
+</div>
+<button onclick="changeFont()">change font</button>
+
+
+
+
+
+
+
+
+
+
+    </body>
+    <script>
+    //  3rd example
+    function clickFn(){
+        document.getElementById("p1").innerHTML = "I have clicked button";
+    }
+
+
+   function changeFont(){
+    const divRef = document.getElementById('div');
+    console.log(divRef)
+    divRef.getElementsByTagName("P")[1].style.fontSize="34px"
+   }
+        // first example
+        // function myfunction(){
+        //     document.getElementById("p1").innerHTML = " ";
+        // }
+       
+    //    ----------------->
+       
+        // second example
+        // let list = document.getElementById("ul-list").innerHTML;
+        // console.log(list)
+        // document.getElementById("new-list").innerHTML = list;
+    </script>
+</html>

@@ -1,0 +1,27 @@
+
+<div>
+    <h1>Search Functionality</h1>
+    <input type="search" id="searchbar"/>
+    <p id="para">API called 0 times</p>
+    <button id="btn">Reset</button>
+</div>
+<script>
+    let output = document.getElementById('para');
+console.log(output);
+let input = document.getElementById("searchbar");
+console.log(input);
+let button =document.getElementById("btn");
+console.log(button)
+let count = 0;
+const handleChange = function (){
+    count+=1;
+    output.innerText = `ApI called ${count} times`;
+}
+    input.addEventListener("input",handleChange)
+
+btn.addEventListener("click",()=>{
+    count=0
+    input.value=""
+    output.innerText = `API called ${count} times`;
+})
+</script>
