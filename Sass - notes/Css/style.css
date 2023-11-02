@@ -1,0 +1,17 @@
+nav ul {
+  margin: 0;
+  list-style: none;
+  background-color: rgb(211, 121, 121);
+  text-align: end;
+}
+nav li {
+  padding: 12px;
+  display: inline-block;
+  font-size: 20PX;
+  color: white;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

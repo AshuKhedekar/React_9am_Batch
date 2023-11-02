@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data={
+            "name":"sachin",
+            "phone":1221233243,
+            "email":"abx@gmail.com"
+    }
+     sessionStorage.setItem("FNAME","REACT");
+       sessionStorage.setItem("sessionData",JSON.stringify(data));
+      
+
+    
+        localStorage.setItem("FNAME","REACT");
+      localStorage.setItem("data",JSON.stringify(data));
+       let localStorageItem = localStorage.getItem('data');
+       const obj = JSON.parse(localStorageItem);
+    //    sessionStorage.clear();
+    //    localStorage.clear();
+       console.log(obj);
+       localStorage.removeItem('FNAME');
+       document.cookie = "name=sachin";
+        console.log(document.cookie = "username = abc@123; expires = Fri oct 13 2023 1:30 GMT+0530");
+
+        
+// Set a Cookie
+document.cookie = "name=max; expires=Fri, 13 Oct 2023 12:00:00 UTC";
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+$primary:rgb(211, 121, 121);
+nav {
+    ul{
+        margin:0;
+        list-style: none;
+        background-color: $primary;
+        text-align: end;
+    }
+    li{
+        padding:12px;
+        display: inline-block;
+        font-size: 20PX; 
+        color:white;               
+    }
+    a{
+        display: block;
+        padding:6px 12px;
+        text-decoration: none;
+    }
+}
